@@ -21,15 +21,15 @@ function rec = FBP(signalMat, distanceMat, dim, fs,v)
     f2 = -fliplr(f1);   
     f2 = f2(2:end-1);
 
-    filtRamp = [f1,f2 ];  %ramp filter 
+    filtRamp = [f1 f2 ];  %ramp filter 
     k = 2*pi.*filtRamp/v; % wave vector
     k = k'; 
     
 % figure,
 % subplot(221)
-% plot(fv)
+% plot(f1)
 % subplot(222)
-% plot(fv2)
+% plot(f2)
 % subplot(223)
 % plot(filtRamp)
 % subplot(224)
@@ -49,10 +49,10 @@ function rec = FBP(signalMat, distanceMat, dim, fs,v)
         sig_tmp = pFilt(isample_bin);
 
         bp =bp + sig_tmp;
-%         figure(1)
+%         figure(103)
 %         subplot(233)
 %         rec=reshape(bp,dim(1),dim(2),dim(3));
-%         imagesc(squeeze(rec(:,:,z_sel)))
+%         imagesc(squeeze(rec(:,:,35)))
 %         title(['+ id ' num2str(ii)])
 %         axis square
     %     pause(0.01)
